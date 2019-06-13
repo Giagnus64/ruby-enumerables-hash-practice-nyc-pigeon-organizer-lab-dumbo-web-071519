@@ -14,8 +14,8 @@ def nyc_pigeon_organizer(data)
         elsif memo[pigeon][current_attribute]
           memo[pigeon][current_attribute].push(attribute_modifier.to_s)
         #if current pigeon exists and attribute does NOT exist, assign attribute to
-        else
-          memo[pigeon][current_attribute] = [attribute_modifier.to_s]
+        #else
+        #  memo[pigeon][current_attribute] = [attribute_modifier.to_s]
         end
       end
     end
@@ -24,7 +24,7 @@ def nyc_pigeon_organizer(data)
   end
   p names_sort
 end
-=begin
+
 pigeon_data = {
   :color => {
     :purple => ["Theo", "Peter Jr.", "Lucky"],
@@ -44,4 +44,3 @@ pigeon_data = {
   }
 }
 nyc_pigeon_organizer(pigeon_data)
-=end
