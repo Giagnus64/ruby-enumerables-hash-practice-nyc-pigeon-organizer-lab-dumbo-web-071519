@@ -6,16 +6,16 @@ def nyc_pigeon_organizer(data)
     values.each do |(attribute_modifier, pigeon_array)|
       pigeon_array.each do |pigeon|
         #if current pigeon doesn't exist in hash, create it and assign accordingly
-        if !memo.key?(pigeon) || !memo[pigeon][current_attribute]
-          memo[pigeon][current_attribute] = [attribute_modifier.to_s]
-            #current_attribute => [attribute_modifier.to_s]
-          #}
+        if !memo.key?(pigeon)
+          memo[pigeon] ={
+            current_attribute => [attribute_modifier.to_s]
+          }
         #if current pigeon exists, and attribute exists, push attribute to array and convert to string
         elsif memo[pigeon][current_attribute]
           memo[pigeon][current_attribute].push(attribute_modifier.to_s)
         #if current pigeon exists and attribute does NOT exist, assign attribute to
-        #else
-        #  memo[pigeon][current_attribute] = [attribute_modifier.to_s]
+        else
+          memo[pigeon][current_attribute] = [attribute_modifier.to_s]
         end
       end
     end
